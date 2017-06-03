@@ -1,0 +1,16 @@
+1234567;143.23;Essen;Mallorca
+2345678;300000.00;Firmenwagen;Zuhause
+1634432;40.00;Torte;Firma
+3456789;12.30;Taschengeld;Firma
+4567890;14.99;Sweet;Zuhause
+7324432;1.00;Furz;Zuhause
+6666666;2400.20;Nutte;Kunde
+1634432;40.00;Torte;Firma
+6324228;2.00;MG;Tibet
+2345678;300000.00;Firmenwagen;Zuhause
+3456789;12.30;Taschengeld;Firma
+1234567;143.23;Essen;Mallorca
+Hammer;223.2;Fögel;Flughafen
+1232112;0.9;Cii;d
+4567890;14.99;Sweet;21
+7324432;1.00;urz;Zuhause
