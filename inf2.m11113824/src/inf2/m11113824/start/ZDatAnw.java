@@ -23,7 +23,7 @@ public class ZDatAnw
 		// temp.sort(2);
 		// temp.sort(3);
 		// temp.sort(4);
-		ListIterator<Maschine> iter = temp.dsliste.listIterator(0);
+		ListIterator<MaschineSer> iter = temp.dsliste.listIterator(0);
 		while (iter.hasNext())
 			iter.next().ausMasch();
 		ZDatM temp2 = new ZDatM("MASCHT.TXT", 2);

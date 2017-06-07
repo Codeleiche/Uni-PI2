@@ -15,8 +15,8 @@ public class ZDatM
 	BufferedReader br1;
 	FileWriter fw1;
 	PrintWriter pr1;
-	LinkedList<Maschine> dsliste;
-	ListIterator<Maschine> iter, r, l;
+	LinkedList<MaschineSer> dsliste;
+	ListIterator<MaschineSer> iter, r, l;
 
 	public ZDatM(String dsn, int mod)
 	{
@@ -25,7 +25,7 @@ public class ZDatM
 				try {
 					fr1 = new FileReader(dsn);
 					br1 = new BufferedReader(fr1);
-					dsliste = new LinkedList<Maschine>();
+					dsliste = new LinkedList<MaschineSer>();
 					fw1 = null;
 					pr1 = null;
 				} catch (FileNotFoundException e) {
@@ -57,7 +57,7 @@ public class ZDatM
 		try {
 			while ((in = br1.readLine()) != null) {
 
-				dsliste.add(new Maschine(in));
+				dsliste.add(new MaschineSer(in));
 				zeilen++;
 			}
 			br1.close();
@@ -85,13 +85,13 @@ public class ZDatM
 	public int sort(int iox)
 	{
 		int round = 0;
-		Maschine[] unsortiert = new Maschine[dsliste.size()];
+		MaschineSer[] unsortiert = new MaschineSer[dsliste.size()];
 		for (int a = 0; a < dsliste.size(); a++)
 			unsortiert[a] = dsliste.get(a);
 		switch (iox) {
 			case 1:
 				for (int i = 0; i < unsortiert.length; i++) {
-					Maschine temp = new Maschine();
+					MaschineSer temp = new MaschineSer();
 					for (int b = i + 1; b < unsortiert.length; b++) {
 						round++;
 						if (unsortiert[i].getManr() > unsortiert[b].getManr()) {
@@ -104,7 +104,7 @@ public class ZDatM
 				break;
 			case 2:
 				for (int i = 0; i < unsortiert.length; i++) {
-					Maschine temp = new Maschine();
+					MaschineSer temp = new MaschineSer();
 					for (int b = i + 1; b < unsortiert.length; b++) {
 						round++;
 						if (unsortiert[i].getPreis() > unsortiert[b].getPreis()) {
@@ -117,7 +117,7 @@ public class ZDatM
 				break;
 			case 3:
 				for (int i = 0; i < unsortiert.length; i++) {
-					Maschine temp = new Maschine();
+					MaschineSer temp = new MaschineSer();
 					for (int b = i + 1; b < unsortiert.length; b++) {
 						round++;
 						if (unsortiert[i].getMaBez().compareTo(unsortiert[b].getMaBez()) > 0) {
@@ -130,7 +130,7 @@ public class ZDatM
 				break;
 			case 4:
 				for (int i = 0; i < unsortiert.length; i++) {
-					Maschine temp = new Maschine();
+					MaschineSer temp = new MaschineSer();
 					for (int b = i + 1; b < unsortiert.length; b++) {
 						round++;
 						if (unsortiert[i].getStao().compareTo(unsortiert[b].getStao()) > 0) {
@@ -156,9 +156,9 @@ public class ZDatM
 	public int direkteAuswahl(int iox)
 	{
 		int round = 0;
-		LinkedList<Maschine> hlist = new LinkedList<Maschine>();
-		ListIterator<Maschine> iter = dsliste.listIterator(0);
-		Maschine temp = new Maschine();
+		LinkedList<MaschineSer> hlist = new LinkedList<MaschineSer>();
+		ListIterator<MaschineSer> iter = dsliste.listIterator(0);
+		MaschineSer temp = new MaschineSer();
 		int i = 0;
 		switch (iox) {
 			case 1:

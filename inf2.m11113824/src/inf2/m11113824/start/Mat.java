@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.LinkedList;
 
-public class Mat
+public class Mat implements Iskalierbar
 {
 	double matrix[][];
 	int crt = 1;
@@ -73,5 +73,18 @@ public class Mat
 				fin.matrix[a][b] = temp;
 			}
 		return fin;
+	}
+
+	@Override
+	public double[][] skalMult(double in)
+	{
+		double[][] out = new double[this.matrix.length][];
+		for (int a = 0; a < this.matrix.length; a++)
+			for (int b = 0; b < this.matrix[a].length; b++) {
+				if (b == 0)
+					out[a] = new double[this.matrix[a].length];
+				out[a][b] = this.matrix[a][b] * in;
+			}
+		return null;
 	}
 }

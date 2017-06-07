@@ -1,19 +1,22 @@
 package inf2.m11113824.start;
 
-public class MaschineS implements Comparable<MaschineS>
+import java.io.Serializable;
+
+public class MaschineSer implements Serializable
 {
 
+	private static final long serialVersionUID = 1L;
 	private int manr;
 	private double preis;
 	private String maBez;
 	private String stao;
 	private int crt = 1;
 
-	MaschineS()
+	MaschineSer()
 	{
 	}
 
-	MaschineS(String in)
+	MaschineSer(String in)
 	{
 		String[] temp = in.split(";");
 		boolean leuft[] = new boolean[temp.length - 2];
@@ -49,8 +52,8 @@ public class MaschineS implements Comparable<MaschineS>
 
 	public boolean setPreis(double preis)
 	{
-		this.preis = (preis > 1) ? preis : 2;
-		return (preis > 1) ? true : false;
+		this.preis = (preis > 1.0) ? preis : 2.0;
+		return (preis > 1.0) ? true : false;
 	}
 
 	public String getMaBez()
@@ -83,16 +86,14 @@ public class MaschineS implements Comparable<MaschineS>
 	}
 
 	@SuppressWarnings("boxing")
-	public String toString()
+	public void ausMasch()
 	{
-		String temp = "";
-		String.format(
+		System.out.printf(
 				"Artikelnummer:\t %d %nPreis:\t\t %.2f %nName:\t\t %s %nStandort:\t %s %n"
 						+ ((crt == 1) ? "Instanz ist OK%n%n"
 								: ((crt == 2) ? "Bitte Überprüfen sie die Zahlen%n%n"
 										: "Bitte überprüfen sie den Standort und die Bezeichnung%n%n")),
 				manr, preis, maBez, stao);
-		return temp;
 	}
 
 	public String ausMaschCSV()
@@ -104,51 +105,4 @@ public class MaschineS implements Comparable<MaschineS>
 	{
 		return preis / laufzeit;
 	}
-
-	public int compareTo(MaschineS comp, int iox)
-	{
-
-		switch (iox) {
-			case 1:
-				return this.manr - comp.manr;
-			case 2:
-				return (int) (this.preis - comp.preis);
-			case 3:
-				return this.maBez.compareTo(comp.maBez);
-			case 4:
-				return this.stao.compareTo(comp.stao);
-			default:
-				return 0;
-		}
-	}
-
-	@Override
-	public boolean equals(Object in)
-	{
-		MaschineS temp = (MaschineS) in;
-		if ((this.manr == temp.manr) && (this.maBez.compareTo(temp.maBez) == 0) && (this.preis == temp.preis)
-				&& (this.stao.compareTo(temp.stao) == 0) && in != null) {
-			return true;
-		} else
-			return false;
-
-	}
-
-	@Override
-	public int hashCode()
-	{
-
-		int hash = (this.maBez.hashCode());
-		return hash;
-	}
-
-	@SuppressWarnings("cast")
-	public int compareTo(MaschineS comp)
-	{
-
-		System.out.println("Ergebniss" + ((this.manr == comp.manr)
-				? (this.preis == comp.preis) ? (this.stao.compareTo(comp.stao) == 0) ? 0 : 1 : 1 : 1));
-		return (int) ((this.manr == comp.manr) ? 0 : (this.manr > comp.manr) ? 1 : -1);
-	}
-
 }

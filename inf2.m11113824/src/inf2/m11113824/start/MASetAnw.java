@@ -33,19 +33,6 @@ public class MASetAnw
 			iox = Integer.parseInt(in.readLine());
 			switch (iox) {
 				case 1:
-
-					// System.out.println("Bitte geben sie den Namen der
-					// einzulesenden Datei ein.");
-					//
-					// try {
-					// String a = in.readLine();
-					// maset.br1 = new BufferedReader(new FileReader(a));
-					// } catch (FileNotFoundException e) {
-					// e.printStackTrace();
-					// } catch (IOException e) {
-					// // TODO Auto-generated catch block
-					// e.printStackTrace();
-					// }
 					System.out.println("wollen sie die Datein in ein (1)TreeSet oder (2)HashSet einlesen?");
 					switch (Integer.parseInt(in.readLine())) {
 						case 1:

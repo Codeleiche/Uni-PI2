@@ -5,19 +5,19 @@ import java.util.ListIterator;
 
 public class MaschAnw
 {
-	static Maschine masch;
-	static LinkedList<Maschine> maschList = new LinkedList<Maschine>();
-	static ListIterator<Maschine> iterator;
+	static MaschineSer masch;
+	static LinkedList<MaschineSer> maschList = new LinkedList<MaschineSer>();
+	static ListIterator<MaschineSer> iterator;
 
 	public static void main(String args[])
 	{
-		masch = new Maschine();
+		masch = new MaschineSer();
 
 		masch.ausMasch();
 		String[] temp = maschGeber();
 		for (int i = 0; i < temp.length; i++)
 		{
-			masch = new Maschine(temp[i]);
+			masch = new MaschineSer(temp[i]);
 			if (masch.getCrt() != 1)
 				masch.ausMasch();
 			if (masch.getCrt() == 1 && masch != null)
