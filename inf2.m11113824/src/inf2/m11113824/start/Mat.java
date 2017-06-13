@@ -85,6 +85,6 @@ public class Mat implements Iskalierbar
 					out[a] = new double[this.matrix[a].length];
 				out[a][b] = this.matrix[a][b] * in;
 			}
-		return null;
+		return out;
 	}
 }
